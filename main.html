@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Wikimedia UCoC quiz
+		</title>
+		<meta charset="utf-8">
+		<style>
+			body {
+				font-family: 'Verdana';
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center;">
+			Wikimedia UCoC quiz
+		</h1>
+		<div id="quiz">
+			
+		</div>
+		<script>
+			var corrs = [];
+			var answers = [];
+		</script>
+		<script id="gen">
+			function question(q, a) {
+				document.getElementById("quiz") = `
+					<p>
+						${q}
+					</p>
+				`;
+			}
+			question("Lorem ipsum dolor sit amet...", ["Answer 1"]);
+			document.getElementById("gen").innerHTML = "";
+		</script>
+	</body>
+</html>
