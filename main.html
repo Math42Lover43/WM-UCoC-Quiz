@@ -37,7 +37,7 @@
 					</p>
 				`;
 				corrs.push(a[0]);
-				for(let i = 0; a != []; i++) {
+				for(let i = 0; i < 4; i++) {
 					choice = Math.floor(Math.random() * a.length);
 					document.getElementById("quiz").innerHTML += `
 						<button style="background-color: hsv(${40 * i}, 1, 0.5);" onclick="answers[${quest}] = '${a[choice]}]';">
