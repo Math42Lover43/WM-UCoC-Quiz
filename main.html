@@ -44,7 +44,7 @@
 				for(let i = 0; i < 4; i++) {
 					choice = Math.floor(Math.random() * a.length);
 					document.getElementById("quiz").innerHTML += `
-						<button style="background-color: hsv(${40 * i}, 100%, 50%);" onclick="answers[${quest}] = '${a[choice]}';">
+						<button style="background-color: hsl(${40 * i}, 100%, 50%);" onclick="answers[${quest}] = '${a[choice]}';">
 							${a[choice]}
 						</button>
 					`;
