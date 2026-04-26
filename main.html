@@ -9,6 +9,10 @@
 			body {
 				font-family: 'Verdana';
 			}
+			button {
+				background-color: black;
+				color: white;
+			}
 		</style>
 	</head>
 	<body>
@@ -23,14 +27,27 @@
 			var answers = [];
 		</script>
 		<script id="gen">
+			var quest = 0;
 			function question(q, a) {
+				var choice;
+				answers.push("");
 				document.getElementById("quiz").innerHTML += `
 					<p>
 						${q}
 					</p>
 				`;
+				corrs.push(a[0]);
+				for(let i = 0; a != []; i++) {
+					choice = Math.random() * a.length;
+					document.getElementById("quiz").innerHTML += `
+						<button style="background-color: hsv(${40 * i}, 1, 0.5);" onclick="answers[${quest}] = ${a[choice]}];">
+							${a[choice]}
+						</button>
+					`;
+				}
+				quest++;
 			}
-			question("Lorem ipsum dolor sit amet...", ["Answer 1"]);
+			question("Lorem ipsum dolor sit amet...", ["Answer 1", "Ajraddatz", "BRPever", "Ghilt"]);
 			document.getElementById("gen").innerHTML = "";
 		</script>
 	</body>
