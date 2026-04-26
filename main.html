@@ -44,7 +44,7 @@
 							${a[choice]}
 						</button>
 					`;
-					a.splice(choice, 1);
+					a = a.slice(0, choice).concat(a.slice(choice + 1));
 				}
 				quest++;
 			}
