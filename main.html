@@ -25,11 +25,27 @@
 		<div id="quiz">
 			
 		</div>
+		<div style="text-align: center;">
+			<button onclick="check();">
+				Check answers
+			</button>
+		</div>
 		<script>
-			var corrs = [];
-			var answers = [];
+			function check() {
+				var corr = 0;
+				for(let insp = 0; insp < corr.length; insp++) {
+					corr += corrs[insp] == answers[insp];
+				}
+				document.body.innerHTML = `
+					<h1>
+						Your likelihood of UCoC compliance is <span style="color: hsl(${120 * corr / corrs.length}, 100%, 40%);">${Math.round(100 * corr / corrs.length)}%</span>
+					</h1>
+				`;
+			}
 		</script>
 		<script id="gen">
+			var corrs = [];
+			var answers = [];
 			var quest = 0;
 			function question(q, a) {
 				var choice;
@@ -55,6 +71,7 @@
 				quest++;
 			}
 			question("Someone imports their grievances with another user from a first wiki to your wiki, manufactures an unrelated content dispute with them, and takes all of this to a noticeboard, so you block them for hounding. Later, they start an RfC on Meta about the same issue because the first two wikis failed to provide meaningful resolution. How do you respond?", ["Provide insights into the issue and comfort for the blocked user and give guidance or neutrally tell them to disengage", "Dismiss their concerns using belittling language and claim that they are doing themselves a favor", "Dismiss their concerns as hounding, harassment, or similar", "Tell them not to respond even if similar incidents arise in the future", "Dismiss their complaint simply because the behavior they take issue with is not blockable"]);
+			question("Someone attempts to reassure someone who was treated bluntly about the same matter, such as by providing a supportive message. What do you do?", ["Apologize to the reassured user and thank the user who attempted to reassure them", "Revert the supportive behavior and/or take or threaten action against them for doing so", "Prioritize the application of policies against disruptive behavior such as sockpuppetry to undo the edits in question", "Threaten or otherwise attack the supporter for providing support"]);
 			document.getElementById("gen").innerHTML = "";
 		</script>
 	</body>
