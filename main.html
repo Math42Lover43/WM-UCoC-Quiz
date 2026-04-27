@@ -14,7 +14,6 @@
 				color: white;
 				border: 0px;
 				border-radius: 5pt;
-				width: 20%;
 				padding: 5pt;
 			}
 		</style>
@@ -46,7 +45,7 @@
 				for(let i = 0; i < then; i++) {
 					choice = Math.floor(Math.random() * a.length);
 					document.getElementById("quiz").innerHTML += `
-						<button style="background-color: hsl(${120 / (then - 1) * i}, 100%, 25%);" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('40%')] = '25%'; } document.getElementById('quest${quest}choice${i}').style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('25%')] = '40%';">
+						<button style="background-color: hsl(${120 / (then - 1) * i}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('40%')] = '25%'; } document.getElementById('quest${quest}choice${i}').style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('25%')] = '40%';">
 							${a[choice]}
 						</button>
 					`;
@@ -55,7 +54,7 @@
 				}
 				quest++;
 			}
-			question("Someone imports their grievances with another user from a first wiki to your wiki, manufactures an unrelated content dispute with them, and takes all of this to a noticeboard, so you block them for hounding. Later, they start an RfC on Meta about the same issue because the first two wikis failed to provide meaningful resolution. How do you respond?", ["Provide insights into the issue and comfort for the blocked user and give guidance or neutrally tell them to disengage", "Dismiss their concerns using belittling language and claim that they are doing themselves a favor", "Dismiss their concerns as hounding, harassment, or similar", "Tell them not to respond even if similar incidents arise in the future"]);
+			question("Someone imports their grievances with another user from a first wiki to your wiki, manufactures an unrelated content dispute with them, and takes all of this to a noticeboard, so you block them for hounding. Later, they start an RfC on Meta about the same issue because the first two wikis failed to provide meaningful resolution. How do you respond?", ["Provide insights into the issue and comfort for the blocked user and give guidance or neutrally tell them to disengage", "Dismiss their concerns using belittling language and claim that they are doing themselves a favor", "Dismiss their concerns as hounding, harassment, or similar", "Tell them not to respond even if similar incidents arise in the future", "Dismiss their complaint simply because the behavior they take issue with is not blockable"]);
 			document.getElementById("gen").innerHTML = "";
 		</script>
 	</body>
