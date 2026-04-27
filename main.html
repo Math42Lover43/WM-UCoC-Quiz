@@ -45,7 +45,7 @@
 				for(let i = 0; i < then; i++) {
 					choice = Math.floor(Math.random() * a.length);
 					document.getElementById("quiz").innerHTML += `
-						<button style="background-color: hsl(${120 / (then - 1) * i}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('40%')] = '25%'; } document.getElementById('quest${quest}choice${i}').style.backgroundColor[document.getElementById('quest${quest}choice${i}').style.backgroundColor.indexOf('25%')] = '40%';">
+						<button style="background-color: hsl(${120 / (then - 1) * i}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).style.backgroundColor[document.getElementById('quest${quest}choice' + i).style.backgroundColor.indexOf('0, 0.5)')] = '0)'; } document.getElementById('quest${quest}choice${i}').style.backgroundColor[document.getElementById('quest${quest}choice${i}').style.backgroundColor.indexOf('0)')] = '0, 0.5)';">
 							${a[choice]}
 						</button>
 					`;
