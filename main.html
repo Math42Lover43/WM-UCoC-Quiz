@@ -52,6 +52,8 @@
 			function question(q, a) {
 				var choice;
 				var then;
+				var colors = [];
+				var col;
 				answers.push("");
 				document.getElementById("quiz").innerHTML += `
 					<p>
@@ -61,13 +63,18 @@
 				corrs.push(a[0]);
 				then = a.length;
 				for(let i = 0; i < then; i++) {
+					colors.push(120 / (then - 1) * i);
+				}
+				for(let i = 0; i < then; i++) {
 					choice = Math.floor(Math.random() * a.length);
+					col = Math.floor(Math.random() * colors.length);
 					document.getElementById("quiz").innerHTML += `
-						<button style="background-color: hsl(${120 / (then - 1) * i}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).innerHTML = document.getElementById('quest${quest}choice' + i).innerHTML.replaceAll(/<\\\/?b>/g, ''); } document.getElementById('quest${quest}choice${i}').innerHTML = '<b>' + document.getElementById('quest${quest}choice${i}').innerHTML + '</b>';">
+						<button style="background-color: hsl(${col}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).innerHTML = document.getElementById('quest${quest}choice' + i).innerHTML.replaceAll(/<\\\/?b>/g, ''); } document.getElementById('quest${quest}choice${i}').innerHTML = '<b>' + document.getElementById('quest${quest}choice${i}').innerHTML + '</b>';">
 							${a[choice]}
 						</button>
 					`;
 					a = a.slice(0, choice).concat(a.slice(choice + 1));
+					colors = a.slice(0, col).concat(col.slice(col + 1));
 				}
 				quest++;
 			}
