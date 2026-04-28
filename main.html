@@ -69,7 +69,7 @@
 					choice = Math.floor(Math.random() * a.length);
 					col = Math.floor(Math.random() * colors.length);
 					document.getElementById("quiz").innerHTML += `
-						<button style="background-color: hsl(${col}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).innerHTML = document.getElementById('quest${quest}choice' + i).innerHTML.replaceAll(/<\\\/?b>/g, ''); } document.getElementById('quest${quest}choice${i}').innerHTML = '<b>' + document.getElementById('quest${quest}choice${i}').innerHTML + '</b>';">
+						<button style="background-color: hsl(${colors[col]}, 100%, 25%); width: ${90 / then}%" id="quest${quest}choice${i}" onclick="answers[${quest}] = '${a[choice]}'; for(let i = 0; i < ${then}; i++) { document.getElementById('quest${quest}choice' + i).innerHTML = document.getElementById('quest${quest}choice' + i).innerHTML.replaceAll(/<\\\/?b>/g, ''); } document.getElementById('quest${quest}choice${i}').innerHTML = '<b>' + document.getElementById('quest${quest}choice${i}').innerHTML + '</b>';">
 							${a[choice]}
 						</button>
 					`;
