@@ -1,0 +1,1 @@
+We are creating a quiz designed to train (aspiring) administrators of Wikimedia projects to follow the [Universal Code of Conduct](https://foundation.wikimedia.org/wiki/Policy:Universal_Code_of_Conduct), especially given that Wikimedia is now 25 years old.
